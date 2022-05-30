@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>SVG Viewer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CHANGE ME">
+    <meta name="keywords" content="CHANGE ME">
+    <meta name="author" content="CHANGE ME">
+    <!-- Load jquery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <!-- Custom CSS End -->
+</head>
+<body>
+    <!--Header-->
+    <div class="header">
+        <div id="headertext">
+            <h3>SVG Viewer</h3>
+        </div>
+        <div class="desc">
+            SVG Image Displayer! Grab your favourite SVG files and watch 
+            'em show up on with all their properties below! Scroll for more options
+        </div>
+    </div>
+    <!--Panel 1 for File Log view and SVG Log view-->
+    <div class="panel1">
+        <div class="filelog">
+            <table id="append-table">
+                <tr>
+                    <th scope="col">Image (click to download)</th>
+                    <th scope="col">File name (click to download)</th>
+                    <th scope="col">File size</th>
+                    <th scope="col">Number of rectangles</th>
+                    <th scope="col">Number of circles</th>
+                    <th scope="col">Number of paths</th>
+                    <th scope="col">Number of groups</th>
+                </tr>
+                <!--Will be cleared once rows are added in-->
+                <tr id="clear-table">
+                    <td colspan="7" class="single-row">No files</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="svgview">
+            <select id="dropdown-list" onchange="addOptions(this);">  <!--onchange="updateDetails(this.value)"-->
+                <!--<option disabled selected value>Select an image</option>-->
+                <option value="">--Select an image--</option>
+            </select>
+            <div class="image-table">
+                <img src="\quad01.svg" alt="Svg Image" width="800px" height="100%">
+            </div>
+            <table class="title-desc">
+                <tr>
+                    <th scope="col" style="width: 35%;">Title</th>
+                    <th scope="col" style="width: 65%;">Description</th>
+                </tr>
+                <tr>
+                    <td>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodider. </td>
+                    <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto hic nemo, pariatur blanditiis perferendis accusantium a temporibus, veritatis, aliquam saepe excepturi.</td>
+                </tr>
+            </table>
+            <table class="title-desc2">
+                <tr>
+                    <th scope="col" style="width: 25%;">Component</th>
+                    <th scope="col" style="width: 50%;">Summary</th>
+                    <th scope="col" style="width: 25%;">Other Attributes</th>
+                </tr>
+                <tr>
+                    <td>test 1</td>
+                    <td>test 2</td>
+                    <td>test 3</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="upload">
+        <form ref='uploadForm' id='uploadForm' action='/upload' method='post' encType="multipart/form-data">
+            <div class="form-group">
+                <input type="file" name="uploadFile" class="btn btn-secondary">
+                <input type='submit' value='Upload' class="btn btn-secondary">
+            </div>
+        </form>
+    </div>
+    <!--Panel for additional components-->
+    <div class="additional">
+        <a href="rects.svg" download>rects.svg</a>
+        <p></p>
+        <hr>
+        <div id="blah">I am blah</div>
+        <hr>
+        <form ref='someform' id='someform'>
+            <div class="form-group">
+                <label for="entryBox">Last Name</label>
+                <input type="text" class="form-control" id="entryBox" value="Value" placeholder="Placeholder">
+            </div>
+            <div class="form-group">
+                <input type='submit' class="btn btn-secondary">
+            </div>
+        </form>
+    </div>
+    <!--Footer-->
+    <div class="footer">
+        <div class="desc2">
+            <p>&copy; Abdullah Khan 2022. All rights reserved.</p>
+        </div>
+    </div>
+    <!-- Leave me at the bottom of body -->
+    <script src="/index.js"></script>
+</body>
+</html>
