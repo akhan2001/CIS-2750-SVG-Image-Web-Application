@@ -1,4 +1,4 @@
-#CIS*2750 SVG Image Web Application
+# CIS*2750 SVG Image Web Application
 
 ## CIS*2750 - Assignment 1 (Parsing)
 
